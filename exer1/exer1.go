@@ -84,7 +84,7 @@ func search(start *node, end *node , sp [676]wordlists, ep [676]wordlists) (*nod
     var _arr_st_index, _arr_en_index []uint16
     var wlen uint8
 
-    var cur [100000]node
+    var cur [110000]node
     var child node
     var ndC uint64
     ndC = 0
@@ -96,6 +96,9 @@ func search(start *node, end *node , sp [676]wordlists, ep [676]wordlists) (*nod
 
     for len(ftr) != 0 {
         cur[ndC], ftr = ftr[0], ftr[1:len(ftr)]
+        if ndC%10000 == 0 {
+            fmt.Println(cur[ndC.name)
+        }
         if in_queue(cur[ndC], exp) {
             continue
         }
@@ -199,9 +202,7 @@ func main() {
             _, err = file.WriteString(result.name + "\n")
             check(err)
             if ix == len(word1)-1 {
-                fmt.Println(word1[ix], len(word1[ix]))
-                fmt.Println(word2[ix], len(word2[ix]))
-                fmt.Println(result.name, result.cost, result.parent.name)
+                fmt.Println(result.name, result.parent.name)
             }
             result = result.parent
         }
