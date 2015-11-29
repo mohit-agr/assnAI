@@ -97,7 +97,7 @@ func search(start *node, end *node , sp [676]wordlists, ep [676]wordlists) (*nod
     for len(ftr) != 0 {
         cur[ndC], ftr = ftr[0], ftr[1:len(ftr)]
         if ndC%10000 == 0 {
-            fmt.Println(cur[ndC.name)
+            // fmt.Println(cur[ndC].name)
         }
         if in_queue(cur[ndC], exp) {
             continue
