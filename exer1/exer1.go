@@ -96,9 +96,7 @@ func search(start *node, end *node , sp [676]wordlists, ep [676]wordlists) (*nod
 
     for len(ftr) != 0 {
         cur[ndC], ftr = ftr[0], ftr[1:len(ftr)]
-        if ndC%10000 == 0 {
-            // fmt.Println(cur[ndC].name)
-        }
+
         if in_queue(cur[ndC], exp) {
             continue
         }
@@ -185,7 +183,7 @@ func main() {
     fmt.Print("Enter word2: ")
     word, _ = reader.ReadString('\n')
     word2 = append(word2, word[:len(word)-1])
-
+    var cmn, parentName string
     sp, ep := create_lists(words)
 
     for ix := 0; ix < len(word1); ix++ {
@@ -199,10 +197,21 @@ func main() {
         result := search(start, end, sp, ep)
         
         for result.cost !=0 {
+            if result.end {
+                cmn = string(result.name[0]-32) + string(result.name[1]-32)
+                result.name = cmn + result.name[2:len(result.name)]
+                cmn = string(result.parent.name[len(result.parent.name)-2]-32) + string(result.parent.name[len(result.parent.name)-1]-32)
+                parentName = result.parent.name[:len(result.parent.name)-2] + cmn
+            } else {
+                cmn = string(result.name[len(result.name)-2]-32) + string(result.name[len(result.name)-1]-32)
+                result.name = result.name[:len(result.name)-2] + cmn
+                cmn = string(result.parent.name[0]-32) + string(result.parent.name[1]-32)
+                parentName = cmn + result.parent.name[2:len(result.parent.name)]
+            }
             _, err = file.WriteString(result.name + "\n")
             check(err)
             if ix == len(word1)-1 {
-                fmt.Println(result.name, result.parent.name)
+                fmt.Println(result.name, parentName)
             }
             result = result.parent
         }
