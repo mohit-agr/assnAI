@@ -6,6 +6,7 @@ import (
     "fmt"
     "log"
     "os"
+    "time"
 )
 
 type node struct {
@@ -193,9 +194,9 @@ func main() {
 
         end := new(node)
         end.name = word2[ix]
-
+        begin := time.Now()
         result := search(start, end, sp, ep)
-        
+        elapsed := time.Since(begin)
         for result.cost !=0 {
             if result.end {
                 cmn = string(result.name[0]-32) + string(result.name[1]-32)
@@ -214,6 +215,10 @@ func main() {
                 fmt.Println(result.name, parentName)
             }
             result = result.parent
+        }
+
+        if ix == len(word1)-1 {
+            fmt.Println("Time taken : ", elapsed)
         }
         _, err = file.WriteString(result.name + "\n")
         check(err)
