@@ -1,0 +1,4 @@
+language ESSENCE' 1.0
+letting example_parameter be 1
+
+$ you don't need to use a param file to have a good solution to this problem. However, if there are parameters within the constraint satisfaction problem that you want to vary, then a param file is useful.

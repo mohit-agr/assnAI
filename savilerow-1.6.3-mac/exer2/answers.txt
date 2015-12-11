@@ -1,0 +1,43 @@
+Mohit Agarwal 
+03667369
+
+Explanation of Variables:
+Frodo, Sam, Merry, Pippin, Aragorn, Legolas, Gimli, Gandalf, Boromir : These variable will be assigned values :
+	1 for breakfast
+	2 for lunch
+	3 for dinner
+M : vector of all the above 9 variables. Constraints of group size will be applied using the values in this vector 
+
+Solutions to Problems:
+
+/* write the names of the characters who are in each group. If no solution exists, then write "N/A" */
+
+Problem 2.1. 
+
+Breakfast: Aragorn, Boromir, Legolas
+Lunch: Frodo, Sam, Merry
+Dinner: Gandalf, Gimli, Pippin
+
+Problem 2.2.
+
+Breakfast: Aragorn, Gandalf, Legolas
+Lunch: Boromir, Merry
+Dinner: Frodo, Gimli, Pippin, Sam
+
+Problem 2.3.
+
+Breakfast: Boromir, Gandalf, Legolas
+Lunch: Aragorn, Merry
+Dinner: Frodo, Gimli, Pippin, Sam
+
+Problem 2.4.
+
+Breakfast: N/A
+Lunch: N/A
+Dinner: N/A
+
+Problem 2.5.
+
+Breakfast: Boromir, Gandalf, Legolas
+Lunch: Aragorn, Merry, Sam
+Dinner: Frodo, Gimli, Pippin

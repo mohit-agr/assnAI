@@ -1,0 +1,15 @@
+language ESSENCE' 1.0
+$ Minion SolverNodes: 1
+$ Minion SolverTotalTime: 0.000154
+$ Minion SolverTimeOut: 0
+$ Savile Row TotalTime: 0.213
+letting Aragorn be 1
+letting Boromir be 1
+letting Frodo be 2
+letting Gandalf be 3
+letting Gimli be 3
+letting Legolas be 1
+letting M be [2, 2, 2, 3, 1, 1, 3, 3, 1;int(1..9)]
+letting Merry be 2
+letting Pippin be 3
+letting Sam be 2

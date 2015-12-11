@@ -1,0 +1,22 @@
+MINION 3
+# CSETopLevel_number = 0
+# CSETopLevel_eliminated_expressions = 0
+# CSETopLevel_total_size = 0
+# CSE_active_number = 0
+# CSE_active_eliminated_expressions = 0
+# CSE_active_total_size = 0
+**VARIABLES**
+DISCRETE M_00004 #
+{1..2}
+DISCRETE M_00005 #
+{1..2}
+DISCRETE M_00007 #
+{1..3}
+DISCRETE M_00008 #
+{1..2}
+**SEARCH**
+PRINT[[M_00004],[M_00005],[M_00007],[M_00008]]
+VARORDER STATIC [3, 3, 2, 3, M_00004, M_00005, 3, M_00007, M_00008, 3, 3, 2, 3, M_00004, M_00005, 3, M_00007, M_00008]
+VARORDER AUX [M_00004,M_00005,M_00007,M_00008]
+**CONSTRAINTS**
+gccweak([M_00004, M_00005, M_00007, M_00008],[1, 2, 3],[3, 2, -1])**EOF**
